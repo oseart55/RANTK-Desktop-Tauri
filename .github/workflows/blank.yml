@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   release:
-    types: [created]
+    types: [published]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,5 +23,5 @@ jobs:
       - uses: actions/checkout@v3
       - name: title
         env:
-          TITLE: ${{ github.event.release.title }}
+          TITLE: ${{ github.event.release.name }}
         run: echo The Title is $TITLE
