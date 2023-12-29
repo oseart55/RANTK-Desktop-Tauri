@@ -22,6 +22,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: title
-        env:
-          TITLE: ${{ github.event.release.name }}
-        run: echo The Title is $TITLE
+        run: echo The Title is ${{ github.event.release.name }}
